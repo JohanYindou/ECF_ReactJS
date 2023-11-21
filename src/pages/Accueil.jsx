@@ -1,14 +1,13 @@
-import { useState } from 'react'
 import '../styles/App.css'
 import Navigation from '../components/Navigation'
+import Resume from '../components/Accueil/Résume'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <Navigation />
-      
+      <Resume/>
     </>
   )
 }
