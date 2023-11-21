@@ -1,20 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Accueil from './pages/App.jsx';
-import Compétances from './pages/Compétances.jsx'
+import Accueil from './pages/Accueil.jsx';
+import Competances from './pages/Compétances.jsx';
+import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx'
-import Portfolio from './pages/Portfolio.jsx'
-import '../styles/index.css';
+import './styles/index.css';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Accueil />,
-  },
+  }
+  ,
   {
     path: '/compétances',
-    element: <Compétances />,
+    element: <Competances />,
   },
   {
     path: '/portfolio',
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
     path: '/contact',
     element: <Contact />,
   },
-]);
+ ]);
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
