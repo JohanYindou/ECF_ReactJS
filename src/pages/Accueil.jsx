@@ -1,4 +1,3 @@
-import '../styles/App.css'
 import Navigation from '../components/Navigation'
 import Resume from '../components/Accueil/Résume'
 
