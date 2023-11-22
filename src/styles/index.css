@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat,Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  /* max-width: 1440px; */
+  text-align: center;
 }
 
 body {
@@ -21,6 +29,7 @@ body {
 
 header {
   margin: 1rem;
+  background-color: #ffffff;
 }
 
 .navbar {
@@ -41,18 +50,27 @@ header {
   margin-right: 2.5rem;
   flex: 1;
   padding: 0.4rem;
-  color: black;
+  color: #000000;
+  ;
   /* border-bottom: 2px solid rgb(255, 255, 255); */
 }
 
 .navbar-item:hover {
   cursor: pointer;
-  background-color: rgba(212, 212, 212, 0.5);
+  background-color: rgba(212, 212, 212, 0.25);
+  color: #ff0000;
   /* border-bottom: 2px solid blue; */
   padding: 0.4rem;
 }
 
-/*----------- Composant Accueil  -----------*/
+/*----------- Composant Resume  -----------*/
+.accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .resume {
   display: flex;
   flex-direction: row;
@@ -75,11 +93,18 @@ header {
   margin: 1rem;
 }
 
-/* .nom {} */
-
 .metier {
   font-size: 24px;
   font-style: italic
+}
+
+.resume-présentation {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  align-self: center;
+  padding: 1rem;
+  font-size: 20px;
 }
 
 /*-------- Composant Skills --------*/
@@ -97,6 +122,11 @@ header {
   align-items: center;
 }
 
+.skill-name {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .compétances {
   display: flex;
   flex-direction: row;
@@ -105,24 +135,64 @@ header {
 }
 
 
-.frontend,
+.frontend {
+  padding: 0rem 4rem 0rem 0rem;
+  margin: 0rem 1rem 1rem 1rem;
+}
+
 .backend {
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 0rem 0rem 0rem 4rem;
   margin: 0rem 1rem 1rem 1rem;
 }
 
 .progress {
   border: 1px solid black;
+  width: 10rem;
 }
 
 .progress-bar {
   display: flex;
   background-color: blue;
+  border-radius: 1rem;
   height: 0.5rem;
+  margin-left: 0.2rem;
   justify-content: center;
   align-self: center;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  /* transition: width 1s ease;
+  -webkit-transition: width 1s ease;
+  -moz-transition: width 1s ease;
+  -ms-transition: width 1s ease;
+  -o-transition: width 1s ease; */
 }
 
+.skill-logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.skill-group{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.experiance-entreprise{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
 /*------   Composants Projects     -----*/
 
@@ -159,13 +229,14 @@ header {
 
 /*------   Composants FormContact     -----*/
 
-.contact{
+.contact {
   font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: center;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -174,10 +245,10 @@ header {
   width: 80%;
   padding: 1rem;
   border: 1px solid #000;
-  background-color: rgb(212,212,212);
+  background-color: rgb(212, 212, 212);
 }
 
-.form-submit{
+.form-submit {
   display: flex;
   justify-content: center;
   align-self: center;
@@ -186,10 +257,19 @@ header {
   padding: 0.5rem;
 }
 
-.email-error{
+.email-error {
   color: red;
 }
 
-.message-error{
+.message-error {
   color: red;
 }
+
+
+
+/* Media queries pour les écrans de taille standard */
+@media screen and (min-width: 768px) {}
+
+
+/* Media queries pour les appareils mobiles */
+@media screen and (max-width: 767px) {}
