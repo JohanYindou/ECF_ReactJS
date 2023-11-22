@@ -1,9 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import HTML from '../../../public/media/HTML5_logo.webp';
+import CSS from '../../../public/media/CSS3_logo_and_wordmark.svg';
+import JS from '../../../public/media/JS_logo.webp';
+import PHP from '../../../public/media/PHP-logo.svg';
 
+import placeholder from '../../../public/media/placeholder.svg';
 const Competence = ({ nom, pourcentage }) => {
+  /*Tentative d'animation
+   * Marche pas à l'apparition sur la page
+   */
+  // const [widthStyle, setWidthStyle] = useState({ width: '0%' });
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setWidthStyle({ width: `${pourcentage}%` });
+  //   }, 500); // Ajoute un délai de 500ms avant de démarrer l'animation
+  // }, [pourcentage]);
+
+  // Définis une variable pour stocker l'image basée sur le nom de la compétence
+  let image;
+  let displayStyle = {}; // Style par défaut
+
+  // Associe chaque compétence à son image respective
+  switch (nom) {
+    case 'HTML':
+      image = HTML;
+      break;
+    case 'CSS':
+      image = CSS;
+      break;
+    case 'JS':
+      image = JS;
+      break;
+    case 'PHP':
+      image = PHP;
+      break;
+    default:
+      // Par défaut, utilise une image générique ou une image par défaut
+      image = placeholder;
+      displayStyle = { display: 'none' };
+      break;
+  }
+
   return (
     <div className="skill">
-      <p className="skill-name">{nom}</p>
+      <div className="skill-group">
+        <p className="skill-name">{nom}</p>
+        <img
+          className="skill-logo"
+          src={image}
+          alt={nom}
+          style={displayStyle}
+        />
+      </div>
       <div className="progress">
         <div
           className="progress-bar"
@@ -17,7 +66,14 @@ const Competence = ({ nom, pourcentage }) => {
 const Experience = ({ poste, entreprise, annees }) => {
   return (
     <div className="experience">
-      <h3>{poste}</h3>
+      <div className="experiance-entreprise">
+        <h3>{poste}</h3>
+        <img
+          className="experiance-logo"
+          src={placeholder}
+          alt="logo-entreprise"
+        />
+      </div>
       <p>
         {entreprise} - {annees}
       </p>
@@ -30,14 +86,14 @@ const Experience = ({ poste, entreprise, annees }) => {
 const Skills = () => {
   // Utilise le hook useState pour gérer l'état des compétences
   const [competencesFront, setCompetencesFront] = useState([
-    { nom: ' HTML', pourcentage: 80 },
-    { nom: 'CSS', pourcentage: 70 },
-    { nom: 'JS', pourcentage: 85 },
+    { nom: 'HTML', pourcentage: 85 },
+    { nom: 'CSS', pourcentage: 65 },
+    { nom: 'JS', pourcentage: 75 },
   ]);
   const [competencesBack, setCompetencesBack] = useState([
-    { nom: 'PHP', pourcentage: 65 },
-    { nom: 'SQL', pourcentage: 75 },
-    { nom: 'NOSQL', pourcentage: 90 },
+    { nom: 'PHP', pourcentage: 55 },
+    { nom: 'SQL', pourcentage: 60 },
+    { nom: 'NOSQL', pourcentage: 70 },
   ]);
 
   // Utilise le hook useState pour gérer l'état des expériences professionnelles
@@ -55,8 +111,13 @@ const Skills = () => {
   ]);
 
   // Données pour les autres compétences (hors informatique) et les hobbies
-  const autresCompetences = ['Marketing', 'Gestion de projet', 'Communication'];
-  const hobbies = ['Photographie', 'Musculation', 'Peinture'];
+  const autresCompetences = [
+    'Adaptabilité ',
+    'Gestion de projet',
+    'Communication',
+    'Analyse et Synthèse',
+  ];
+  const hobbies = ['Football', 'Musculation', 'Basketball'];
 
   return (
     <section className="skills">
@@ -87,7 +148,7 @@ const Skills = () => {
           ))}
         </div>
       </div>
-      <div className='experiances'>
+      <div className="experiances">
         {/* Section des expériences professionnelles */}
         <h1>Mes Expériences</h1>
         {experiences.map((experience, index) => (
