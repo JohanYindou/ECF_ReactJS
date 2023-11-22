@@ -185,3 +185,11 @@ header {
   margin: 1rem;
   padding: 0.5rem;
 }
+
+.email-error{
+  color: red;
+}
+
+.message-error{
+  color: red;
+}
