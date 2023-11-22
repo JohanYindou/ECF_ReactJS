@@ -38,21 +38,12 @@ const ContactForm = ({ onSubmit }) => {
         'Le message doit contenir au moins 10 caractères.',
     ].filter(Boolean); // Filtrage des erreurs non nulles
 
-    if (errors.length > 0) {
-      errors.forEach((error, index) => {
-        if (index === 0) {
-          setEmailError(error);
-        } else {
-          setMessageError(error);
-        }
-      });
-      return false; // Indique que le formulaire n'est pas valide
-    }
+    setEmailError(errors.find((error, index) => index === 0) || '');
+    setMessageError(errors.find((error, index) => index === 1) || '');
 
-    setEmailError('');
-    setMessageError('');
-    return true; // Indique que le formulaire est valide
+    return errors.length === 0; // Indique que le formulaire est valide si le tableau d'erreurs est vide
   };
+
 
   // Gestion du changement de l'e-mail
   const handleEmailChange = (e) => {
