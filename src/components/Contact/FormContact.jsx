@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-// 
+//
 const ContactForm = ({ onSubmit }) => {
   // États pour stocker les valeurs des champs et les messages d'erreur
   const [email, setEmail] = useState('');
@@ -38,12 +38,12 @@ const ContactForm = ({ onSubmit }) => {
         'Le message doit contenir au moins 10 caractères.',
     ].filter(Boolean); // Filtrage des erreurs non nulles
 
-    setEmailError(errors.find((error, index) => index === 0) || '');
-    setMessageError(errors.find((error, index) => index === 1) || '');
+    setEmailError(errors.find((error) => error.includes('e-mail')) || '');
+    setMessageError(errors.find((error) => error.includes('message')) || '');
+    
 
     return errors.length === 0; // Indique que le formulaire est valide si le tableau d'erreurs est vide
   };
-
 
   // Gestion du changement de l'e-mail
   const handleEmailChange = (e) => {
@@ -67,6 +67,13 @@ const ContactForm = ({ onSubmit }) => {
     } else {
       setMessageError('');
     }
+
+    /**
+     * Ces console log on servi à résoudre le problème d'affectation 
+     * du message d'erreur de 'message' */
+    
+    // console.log( 'messageError :' + messageError);
+    // console.log('emailError : ' + emailError);
   };
 
   // Soumission du formulaire
@@ -82,61 +89,61 @@ const ContactForm = ({ onSubmit }) => {
   };
 
   // Rendu du formulaire avec les champs, les messages d'erreur et le bouton de soumission
-    return (
-      <form
-        className="contact-form needs-validation"
-        onSubmit={handleSubmit}
-        noValidate>
-        <h1>Formulaire de contact</h1>
-        <div className="form-row  ">
-          <div className="form-group">
-            <label htmlFor="email" className="col-form-label">
-              E-mail :
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              value={email}
-              onChange={handleEmailChange}
-              onBlur={() => setEmailChanged(true)}
-              required
-            />
-            <div
-              className="invalid-feedback"
-              style={{ display: emailError ? 'block' : 'none' }}>
-              {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
-            </div>
-          </div>
-          <div className="form-group ">
-            <label htmlFor="message" className="col-form-label">
-              Message :
-            </label>
-            <textarea
-              className="form-control"
-              id="message"
-              value={message}
-              onChange={handleMessageChange}
-              onBlur={() => setMessageChanged(true)}
-              required
-            />
-            <div
-              className="invalid-feedback"
-              style={{ display: messageError ? 'block' : 'none' }}>
-              {messageError && <p style={{ color: 'red' }}>{messageError}</p>}
-            </div>
+  return (
+    <form
+      className="contact-form needs-validation"
+      onSubmit={handleSubmit}
+      noValidate>
+      <h1>Formulaire de contact</h1>
+      <div className="form-row  ">
+        <div className="form-group">
+          <label htmlFor="email" className="col-form-label">
+            E-mail :
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            value={email}
+            onChange={handleEmailChange}
+            onBlur={() => setEmailChanged(true)}
+            required
+          />
+          <div
+            className="invalid-feedback"
+            style={{ display: emailError ? 'block' : 'none' }}>
+            <p className="email-error" style={{ color: 'red' }}>
+              {emailError}
+            </p>
           </div>
         </div>
-        <button
-          className="form-submit btn btn-primary"
-          type="submit"
-          disabled={!isFormValid}>
-          Envoyer
-        </button>
-      </form>
-    );
-;
-
+        <div className="form-group ">
+          <label htmlFor="message" className="col-form-label">
+            Message :
+          </label>
+          <textarea
+            className="form-control"
+            id="message"
+            value={message}
+            onChange={handleMessageChange}
+            onBlur={() => setMessageChanged(true)}
+            required
+          />
+          <div
+            className="invalid-feedback"
+            style={{ display: messageError ? 'block' : 'none' }}>
+            <p className="message-error">{messageError}</p>
+          </div>
+        </div>
+      </div>
+      <button
+        className="form-submit btn btn-primary"
+        type="submit"
+        disabled={!isFormValid}>
+        Envoyer
+      </button>
+    </form>
+  );
 };
 
 export default ContactForm;
