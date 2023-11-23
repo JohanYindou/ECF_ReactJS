@@ -1,13 +1,15 @@
 import React from 'react';
+import Profile from '../../../public/media/profile2.png';
+import Download from './DownloadButton.jsx';
 
 const Resume = () => {
   const nom = 'Johan Yindou';
-    const métier = `Concepteur / Développeur d'application `
-   
+  const métier = `Concepteur / Développeur d'application `;
+
   return (
     <section className="accueil">
       <div className="resume">
-        <img className="profile" src="https://placehold.co/500x400" alt="" />
+        <img className="profile" src={Profile} alt="" />
         <div className="resume-item">
           <h1 className="nom">Je m'appelle {nom}</h1>
           <p className="metier">{métier}</p>
@@ -21,10 +23,12 @@ const Resume = () => {
         limites de la créativité pour concevoir des solutions uniques et
         fonctionnelles. Explorez mes projets pour découvrir mon approche
         innovante et mes compétences. Je suis ouvert aux collaborations et aux
-        opportunités. Parcourez mes travaux et n'hésitez pas à me contacter pour
-        discuter de vos projets ou pour en savoir plus sur mon parcours. Merci
-        de visiter mon portfolio !
+        opportunités. Parcourez mes travaux et n'hésitez pas à télécharger mon
+        CV et me contacter pour discuter de vos projets ou pour en savoir plus
+        sur mon parcours.
       </p>
+      <p className="resume-présentation">Merci de visiter mon portfolio !</p>
+      <Download />
     </section>
   );
 };
