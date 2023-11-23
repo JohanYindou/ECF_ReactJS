@@ -5,7 +5,6 @@
   font-family: Montserrat,Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
@@ -14,6 +13,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -28,8 +34,7 @@ body {
 /*---------- Composant Navigation --------*/
 
 header {
-  margin: 1rem;
-  background-color: #ffffff;
+  background-color: #333333;
 }
 
 .navbar {
@@ -48,9 +53,8 @@ header {
 
 .navbar-item {
   margin-right: 2.5rem;
-  flex: 1;
   padding: 0.4rem;
-  color: #000000;
+  color: #ffffff;
   ;
   /* border-bottom: 2px solid rgb(255, 255, 255); */
 }
@@ -66,6 +70,7 @@ header {
 /*----------- Composant Resume  -----------*/
 .accueil {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -89,7 +94,7 @@ header {
 }
 
 .profile {
-  width: 40%;
+  width: 30%;
   margin: 1rem;
 }
 
@@ -111,6 +116,7 @@ header {
 
 .skills {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   font-size: 20px;
   justify-content: center;
@@ -198,6 +204,8 @@ header {
 
 .portfolio {
   font-size: 16px;
+  min-height: 100vh;
+  
 }
 
 .projets {
@@ -232,6 +240,7 @@ header {
 .contact {
   font-size: 16px;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-self: center;
@@ -265,6 +274,55 @@ header {
   color: red;
 }
 
+
+/* Page not found */
+
+.notfound{
+  font-size: 16px;
+}
+
+/*---- Composant Footer ----*/
+
+footer{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color: #333333;
+color: #ffffff;
+font-size: 16px;
+padding: 1rem;
+bottom: 0;
+margin-top: 1rem;
+}
+
+.infos-légal{
+  list-style: none;
+}
+
+.mentions{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 2rem;
+}
+
+.titre-list{
+  font-weight: bold;
+}
+.mentions:first-child{
+  width: 100%;
+}
+.mentions:last-child{
+  width: 50%;
+}
+.infos{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-self: center;
+gap: 2rem;
+}
 
 
 /* Media queries pour les écrans de taille standard */
