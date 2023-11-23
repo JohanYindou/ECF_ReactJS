@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Accueil from './pages/Accueil.jsx';
 import Competances from './pages/Compétances.jsx';
 import Portfolio from './pages/Portfolio.jsx';
-import Contact from './pages/Contact.jsx'
+import Contact from './pages/Contact.jsx';
+import NotFound from './pages/NotFound.jsx';
 import './styles/index.css';
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     path: '/contact',
     element: <Contact />,
   },
+  {
+    path: '/*',
+    element : <NotFound />
+  }
  ]);
 
 
