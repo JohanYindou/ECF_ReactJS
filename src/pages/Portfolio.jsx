@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import Projects from '../components/Projets/Projects';
 
 function Portfolio () {
@@ -7,6 +7,7 @@ function Portfolio () {
       <>
         <Navigation />
         <Projects />
+        <Footer />
       </>
     );
 

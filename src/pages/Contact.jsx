@@ -1,5 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import ContactForm from '../components/Contact/FormContact';
 
 const Contact = () => {
@@ -14,9 +15,9 @@ const Contact = () => {
     <>
       <Navigation />
       <section className="contact">
-        
         <ContactForm onSubmit={handleFormSubmit} />
       </section>
+      <Footer />
     </>
   );
 };
