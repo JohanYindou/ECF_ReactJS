@@ -104,6 +104,7 @@ const ContactForm = ({ onSubmit }) => {
             type="email"
             className="form-control"
             id="email"
+            placeholder='exemple@fr.com'
             value={email}
             onChange={handleEmailChange}
             onBlur={() => setEmailChanged(true)}
@@ -124,6 +125,7 @@ const ContactForm = ({ onSubmit }) => {
           <textarea
             className="form-control"
             id="message"
+            placeholder='Ecrire un message.'
             value={message}
             onChange={handleMessageChange}
             onBlur={() => setMessageChanged(true)}
