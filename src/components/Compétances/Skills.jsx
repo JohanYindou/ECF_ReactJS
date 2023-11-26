@@ -6,16 +6,6 @@ import PHP from '../../../public/media/PHP-logo.svg';
 
 import placeholder from '../../../public/media/placeholder.svg';
 const Competence = ({ nom, pourcentage }) => {
-  /*Tentative d'animation
-   * Marche pas à l'apparition sur la page
-   */
-  // const [widthStyle, setWidthStyle] = useState({ width: '0%' });
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setWidthStyle({ width: `${pourcentage}%` });
-  //   }, 500); // Ajoute un délai de 500ms avant de démarrer l'animation
-  // }, [pourcentage]);
 
   // Définis une variable pour stocker l'image basée sur le nom de la compétence
   let image;
