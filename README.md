@@ -28,7 +28,7 @@ Ici nous avons choisit d'utiliser Vite.
 vitejs
 
 ```bash
-npm create vite@latest cinemax
+npm create vite@latest ecf-portfolio
 ```
 
 Suite à cela nous devons entrer dans le dossier de notre projet et installer les dépendances si nécessaire avant de lancer le serveur de développement.
