@@ -43,7 +43,7 @@ const projetsTab = [
   {
     id: 4,
     nom: 'Chatbot',
-    technologie: ' React, HTML, CSS;',
+    technologie: ' React, HTML, CSS',
     image: [Chatbot1, Chatbot2, Chatbot3, Chatbot4],
     lienSources: 'https://github.com/JohanYindou/cda-tp-validation-main',
     description: `Chatbot  réalisé avec l'API de openai qui répond à des questions sur un sujet tech.`,
