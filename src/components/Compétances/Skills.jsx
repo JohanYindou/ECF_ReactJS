@@ -91,12 +91,12 @@ const Skills = () => {
     {
       poste: 'Développeur Front-End',
       entreprise: 'ABC Entreprise',
-      annees: '2018-2020',
+      annees: '2018/2020',
     },
     {
       poste: 'Développeur Full Stack',
       entreprise: 'XYZ Agence',
-      annees: '2021-2023',
+      annees: '2021/2023',
     },
   ]);
 
