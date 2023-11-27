@@ -19,7 +19,7 @@ const projetsTab = [
   {
     id: 1,
     nom: 'Countrix',
-    technologie: 'React, HTML, CSS;',
+    technologie: 'React, HTML, CSS',
     image: [Countrix1, Countrix2, Countrix3],
     lienSources: 'https://github.com/JohanYindou/Countrix',
     description: `Ce projet permet d'afficher des données de pays tel que : la capital, la population, le drapeau en sélectionant le continent souhaité.`,
