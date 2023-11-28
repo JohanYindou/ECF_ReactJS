@@ -22,7 +22,7 @@ Elle est composée de 4 pages :
 
 #### Installation de React
 
-Pour travailler avec React on dois intaller NodeJS et NPM.
+Pour travailler avec React on doit avoir intallé NodeJS et NPM.
 Ici nous avons choisit d'utiliser Vite.
 
 vitejs

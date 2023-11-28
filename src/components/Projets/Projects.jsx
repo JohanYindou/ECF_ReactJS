@@ -27,10 +27,10 @@ const projetsTab = [
   {
     id: 2,
     nom: 'Cinemax',
-    technologie: 'React, HTML, CSS, Node.js',
+    technologie: 'React, HTML, CSS, Express',
     image: [Cinemax1, Cinemax2],
     lienSources: 'https://github.com/JohanYindou/Cinemax',
-    description: `Cinemax est une app de recherche de film et permet d'ajouter une sélection en favoris.`,
+    description: `Cinemax est une app de recherche de film réaliser avec l'API de OMDB et permet d'ajouter une sélection en favoris.`,
   },
   {
     id: 3,
