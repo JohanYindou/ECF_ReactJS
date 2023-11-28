@@ -6,7 +6,7 @@ C'est une app qui sert de portfolio.
 Elle est composée de 4 pages :
 
 - Accueil
-- Compétances
+- Compétences
 - Portfolio
 - Contact
 
@@ -54,7 +54,7 @@ src
 ├── main.jsx // Initialise l'application et configurer les routes
 ├── pages
 │   ├── Accueil.jsx // Page d'accueil
-│   ├── Compétances.jsx // Page de Compétances
+│   ├── Compétences.jsx // Page de Compétences
 │   ├── Portfolio.jsx // Page de Portfolio
 │   ├── Contact.jsx // Page de Contact
 │   └── NotFound.jsx // Page des NotFound
@@ -62,7 +62,7 @@ src
 │   ├── Accueil
 │   │   ├── DownloadButton.jsx // Composant Download
 │   │   └── Résume.jsx // Composant Résume
-│   ├── Compétances
+│   ├── Compétences
 │   │   └── Skills.jsx // Composant Skills
 │   ├── Contact
 │   │   └── FormContact.jsx // Composant FormContact
@@ -103,8 +103,8 @@ const Navigation = () => {
           <Link to="/">
             <li className="navbar-item">Accueil</li>
           </Link>
-          <Link to="/compétances">
-            <li className="navbar-item">Compétances</li>
+          <Link to="/Compétences">
+            <li className="navbar-item">Compétences</li>
           </Link>
           <Link to="/portfolio">
             <li className="navbar-item">Portfolio</li>
@@ -368,11 +368,11 @@ const Experience = ({ poste, entreprise, annees }) => {
 Voici le composant principal ,  on utilise des hooks pour stocker et mettre à jour les donnés des compétences et des expériences professionnelles. Ces hooks useState retournent une valeur représentant l'état actuel et une fonction pour mettre à jour cet état, permettant ainsi de gérer dynamiquement ces informations au sein du composant.
 On créer aussi des tableau pour autresCompetences et hobbies car il n'ont pas besoin d'utiliser useState.
 
-On affiche chaque compétance grace au map en utilisant l'élément tout en  séparant les compétances front du back.
+On affiche chaque compétance grace au map en utilisant l'élément tout en  séparant les Compétences front du back.
 
 On affiche ensuite l'element experiance pour chaque objet présent dans le hook
 
-Enfin on affiche les autre compétances et les hobbies.
+Enfin on affiche les autre Compétences et les hobbies.
 
 ```jsx
 const Skills = () => {
@@ -411,7 +411,7 @@ const Skills = () => {
     <section className="skills">
       {/* Section des compétences */}
       <h1>Mes Compétences</h1>
-      <div className="compétances">
+      <div className="Compétences">
         <div className="frontend">
           <h3>Front-End</h3>
           {competencesFront.map((competence, index) => (
@@ -795,7 +795,7 @@ export default App
 ```jsx
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import Skills from '../components/Compétances/Skills';
+import Skills from '../components/Compétences/Skills';
 
 
 function Competances() {
@@ -920,7 +920,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Accueil from './pages/Accueil.jsx';
-import Competances from './pages/Compétances.jsx';
+import Competances from './pages/Compétences.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
@@ -935,7 +935,7 @@ const router = createBrowserRouter([
   }
   ,
   {
-    path: '/compétances',
+    path: '/Compétences',
     element: <Competances />,
   },
   {
